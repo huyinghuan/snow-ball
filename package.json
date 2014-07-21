@@ -1,0 +1,15 @@
+{
+  "name": "slow-node",
+  "description": "微信订阅号",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "coffee-script":"",
+    "colors": "",
+    "body-parser": ""
+  },
+  "scripts": {
+    "start": "NODE_ENV=development node-dev app.coffee"
+  }
+}
