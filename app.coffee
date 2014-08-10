@@ -22,8 +22,8 @@ app.get('/', (req, res)->
   #认证校验
   flag = _signature(timestamp, nonce, token, signature)
 
-  res.send(echostr) if flag
-  res.send('error')
+  if flag then res.send(echostr) else res.send('error')
+
 
 )
 
