@@ -7,7 +7,8 @@
     "express": "4.x",
     "coffee-script":"",
     "colors": "",
-    "body-parser": ""
+    "body-parser": "",
+    "log4slow": "0.0.7"
   },
   "scripts": {
     "start": "NODE_ENV=development node-dev app.coffee"

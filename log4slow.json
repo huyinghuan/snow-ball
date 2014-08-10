@@ -1,0 +1,16 @@
+{
+  "log2console": true,
+  "timestamp": "YYYY-MM-DD HH:mm:ss",
+  "levelShow": true,
+  "lineInfo": true,
+  "log2file": {
+    "debug": false,
+    "info": true,
+    "warn": true,
+    "error": true
+  },
+  "dirRoot": false,
+  "dirs": ["logs", "$YYYY", "$MM", ":type"],
+  "filename": "$MM-DD",
+  "levelfile": false
+}
