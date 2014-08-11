@@ -8,7 +8,8 @@
     "coffee-script":"",
     "colors": "",
     "body-parser": "",
-    "log4slow": "0.0.7"
+    "log4slow": "0.0.7",
+    "xml2js": "0.4.4"
   },
   "scripts": {
     "start": "NODE_ENV=development node-dev app.coffee"

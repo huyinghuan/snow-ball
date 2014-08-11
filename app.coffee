@@ -2,29 +2,24 @@ express = require 'express'
 app = express()
 port = require('./config.json').port
 token = require('./config.json').token
+
 Log = require 'log4slow'
-bodyParser = require 'body-parser'
 
+_WeGo = require 'wego'
 
-_signature = require './biz/utils/signature'
+app.use(express.static(__dirname + '/static'))
 
-app.use(bodyParser())
+acceptHandle = require './biz/message/accept'
+
+weixin = new _WeGo(token, acceptHandle)
 
 app.get('/', (req, res)->
-  #威信加密后的字符串
-  signature = req.param 'signature'
-  #时间戳
-  timestamp = req.param 'timestamp'
-  #随机数
-  nonce = req.param 'nonce'
-  #随机字符串
-  echostr = req.param 'echostr'
-  #认证校验
-  flag = _signature(timestamp, nonce, token, signature)
+  echostr = weixin.veritySignature(req)
+  if echostr then res.send(echostr) else res.send('error')
+)
 
-  if flag then res.send(echostr) else res.send('error')
-
-
+app.post('/', (req, res)->
+  weixin.parse(req, res)
 )
 
 app.listen port
