@@ -11,15 +11,15 @@ app.use(express.static(__dirname + '/static'))
 
 acceptHandle = require './biz/message/accept'
 
-weixin = new _WeGo(token, acceptHandle)
+wego = new _WeGo(token, acceptHandle)
 
 app.get('/', (req, res)->
-  echostr = weixin.veritySignature(req)
+  echostr = wego.veritySignature(req)
   if echostr then res.send(echostr) else res.send('error')
 )
 
 app.post('/', (req, res)->
-  weixin.parse(req, res)
+  wego.parse(req, res)
 )
 
 app.listen port
