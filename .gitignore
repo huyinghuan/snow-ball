@@ -6,7 +6,7 @@ lib-cov
 *.out
 *.pid
 *.gz
-
+config.coffee
 pids
 logs
 results

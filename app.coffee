@@ -1,13 +1,11 @@
 express = require 'express'
 app = express()
-port = require('./config.json').port
-token = require('./config.json').token
+port = require('./config.coffee').port
+token = require('./config.coffee').token
 
 Log = require 'log4slow'
 
 _WeGo = require 'wego'
-
-app.use(express.static(__dirname + '/static'))
 
 acceptHandle = require './biz/message/accept'
 
