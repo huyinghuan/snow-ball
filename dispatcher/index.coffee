@@ -5,8 +5,8 @@ getMessageType = (str)->
   arr = str.split("|")
   type = arr[0]
   switch type
-    when 'e' then return "email"
-
+    when '-e', 'email' then return "email"
+    when '-h','--help' then return "help"
   return type
 
 
