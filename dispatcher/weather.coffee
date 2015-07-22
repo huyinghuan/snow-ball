@@ -1,5 +1,4 @@
 _WeGo = require('wego')
-_async = require 'async'
 _request = require 'request'
 _weather_token = require('../config').weather
 wego = new _WeGo()
