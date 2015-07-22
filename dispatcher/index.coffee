@@ -7,6 +7,7 @@ getMessageType = (str)->
   switch type
     when '-e', 'email' then return "email"
     when '-h','--help' then return "help"
+    when '-w', '天气', '--weather' then return "weather"
   return type
 
 

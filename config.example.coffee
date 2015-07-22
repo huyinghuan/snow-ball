@@ -8,5 +8,6 @@ module.exports = {
       "user": "xxx", #用户名
       "pass": "xxx" #密码
     }
-  }
+  },
+  "weather": "xxx" #天气接口token http://apistore.baidu.com/apiworks/servicedetail/478.html
 }
