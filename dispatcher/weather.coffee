@@ -17,16 +17,17 @@ dealMessage = (weather)->
 
   for item, index in daily_forecast
     break if index > 2
+    msg.push ""
     if index is 0
       msg.push "今天："
     else
       msg.push("#{item.date}:")
 
     msg.push(
-      "  昼：#{item.cond.txt_d or ""} 夜：#{item.cond.txt_n or ""} #{item.tmp.min}~#{item.tmp.max}度"
+      "  昼:#{item.cond.txt_d or ""}  夜:#{item.cond.txt_n or ""}  #{item.tmp.min}~#{item.tmp.max}度"
     )
     msg.push(
-      "  #{item.wind.dir} #{item.wind.sc} 降水:#{item.pop}%, #{item.pcpn}mm "
+      "  #{item.wind.dir} #{item.wind.sc}  降水:#{item.pop}%, #{item.pcpn}mm "
     )
 
   msg.join('\n')
